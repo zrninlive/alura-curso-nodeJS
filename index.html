@@ -1,0 +1,41 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ssl.p.jwpcdn.com/6/12/jwplayer.js"></script>
+<script type="text/javascript">jwplayer.key="B3KPBmSrht1o6X0ftNMxGIHyCeDku/RuSDC8jBsLcRY=";</script>
+
+<div id='multiplayer_ID'>Video Player Area</div>
+<script type='text/javascript'>
+
+var ResourceID="792120119";
+var StreamName="horsebrasil3";
+var Width="100%";
+var Height="100%";
+var UrlCDN=".r.worldcdn.net/";
+var ImageScreen="https://ssl.interrogacaodigital.net/comum/telacdn4.png";
+
+{
+jwplayer('multiplayer_ID').setup({
+  'id': 'multiplayer_ID',
+  'width': Width,
+  'height': Height,
+  'autostart': 'true',
+  'fallback': 'true',
+  'primary': 'html5',
+  'repeat': 'true',
+  'loop': 'true',
+  'androidhls': 'true',
+  'fullscreen': 'true',
+
+ playlist:	[{
+		image:  ImageScreen,
+		sources: [
+		{ file: "rtsp://" + ResourceID + ".r.worldcdn.net/" + ResourceID + "/_definst_/" + StreamName },
+		{ file: "rtmp://" + ResourceID + ".r.worldcdn.net/" + ResourceID + "/_definst_/" + StreamName },
+		{ file: "http://" + ResourceID + ".r.worldcdn.net/" + ResourceID + "/_definst_/" + StreamName + "/playlist.m3u8"},
+		{ file: "http://" + ResourceID + ".r.worldcdn.net/" + ResourceID + "/_definst_/" + StreamName + "/Manifest"},
+		{ file: "http://" + ResourceID + ".r.worldcdn.net/" + ResourceID + "/_definst_/" + StreamName + "/Manifest.f4m"}
+			]
+		}]
+});
+}
+
+</script>
